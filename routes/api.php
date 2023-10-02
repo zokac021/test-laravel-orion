@@ -7,7 +7,9 @@ use Orion\Facades\Orion;
 
 use App\Http\Controllers\api\ContestController; 
 use App\Http\Controllers\api\TeamController; 
+use App\Http\Controllers\api\PlayerController; 
 use App\Http\Controllers\api\ContestsTeamsController; 
+use App\Http\Controllers\api\TeamsPlayersController; 
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,8 @@ Route::group(['as' => 'api.'], function() {
        
     Orion::resource('contest', ContestController::class);
     Orion::resource('team', TeamController::class);
+    Orion::resource('player', PlayerController::class);
     Orion::belongsToManyResource('contests', 'teams' , ContestsTeamsController::class);
+    Orion::belongsToManyResource('teams', 'players' , TeamsPlayersController::class);
 
 });

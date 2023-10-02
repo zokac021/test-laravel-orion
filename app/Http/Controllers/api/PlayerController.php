@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\api;
 
-use App\Models\Team;
+use App\Models\Player;
 
 use Orion\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -10,11 +10,10 @@ use Illuminate\Http\Request;
 use Orion\Concerns\DisablePagination;
 use Orion\Concerns\DisableAuthorization;
 
-class TeamController extends Controller
+class PlayerController extends Controller
 {
     use DisablePagination;
     use DisableAuthorization;
     
-    protected $model = Team::class; 
-    
+    protected $model = Player::class; 
 }
